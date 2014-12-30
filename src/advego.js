@@ -11,7 +11,7 @@ $(function(){
 			$(this).click(function(){
 				$(this).toggleClass('selecteded');
 				var str = [];
-				$('#text_check_results > div:nth-child(4) > table > tbody > tr > td:nth-child(1).selected').each(function(){
+				$('#text_check_results > div:nth-child(4) > table > tbody > tr > td:nth-child(1).selecteded').each(function(){
 					str.push($(this).text())
 				})
 				$('#sdlhfuifhieswfbhuwf7234rh8327hr4').val(str.join(' '));
