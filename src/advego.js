@@ -2,6 +2,7 @@ $(function(){
 	if (window.location.href == "http://advego.ru/text/seo/") {
 
 		$('head').append($('<style>' +
+			'#text_check_results > div:nth-child(4) > table > tbody > tr > td:nth-child(1) {cursor: pointer}' +
 			'.selecteded {background-color: #9999ff !important;}' +
 		'</style>'));
 
@@ -15,6 +16,9 @@ $(function(){
 					str.push($(this).text())
 				})
 				$('#sdlhfuifhieswfbhuwf7234rh8327hr4').val(str.join(' '));
+				$('#sdlhfuifhieswfbhuwf7234rh8327hr4').click(function(){
+					$(this).select();
+				})
 			})
 		})
 	}
