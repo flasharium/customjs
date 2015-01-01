@@ -29,6 +29,9 @@ $(function () {
 
                     $('#label_1').val(obj['title']).css('border', '1px solid #f00');
                     $('#label_2').val(obj['tz']).css('border', '1px solid #f00');
+                    if (!$('#label_10').val()) {
+                        $('#label_10').val('95%, Адвего глубокая проверка, шингл 4').css('border', '1px solid #f00');
+                    }
 
                     commentForm.find('div.submit > div:nth-child(5) > div > input[type="text"]:nth-child(2)').val(obj['sizeMin']).css('border', '1px solid #f00');
                     commentForm.find('div.submit > div:nth-child(5) > div > input[type="text"]:nth-child(4)').val(obj['sizeMax']).css('border', '1px solid #f00');
