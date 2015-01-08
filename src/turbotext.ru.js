@@ -1,6 +1,8 @@
 $(function () {
     if (window.location.href.indexOf("turbotext.ru") !== -1) {
         
+        $('#content > div.content > div > form > p:nth-child(3) > div > div').css({height:'100%'})
+        
         var a = parseInt($('#header > div.info > div > strong:nth-child(2) > a').text())
         var n = a - parseInt($('#header > div.info > div > span > a').text())
         var k = Math.round(n/30);
