@@ -6,7 +6,8 @@ $(function () {
         var a = parseInt($('#header > div.info > div > strong:nth-child(2) > a').text())
         var n = a - parseInt($('#header > div.info > div > span > a').text())
         var k = Math.round(n/30);
-        $('#header > div.info > div > span > a').after($('<span>, доступно: <b>'+n+' руб.</b>, символов: <b>'+k+'k</b></span>'))
+        var m = Math.round(k/7);
+        $('#header > div.info > div > span > a').after($('<span>, доступно: <b>'+n+' руб.</b>, символов: <b>'+k+'k</b>, статей: <b>'+m+'</b></span>'))
 
         var textarea = $('<div style="text-align:center;background:#fff;z-index: 1000;"><div><textarea cols="60" rows="20"></textarea></div><div><button>label</button></div></div>');
 
