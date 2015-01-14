@@ -78,7 +78,7 @@ if (window.location.href.search(/key=/) != -1) {
 
 if (window.location.href.search(/id=/) != -1) {
 
-    $('#content table td > form').remove();
+    $('#content table td:nth-child(2) > form[action^="#main_"]').remove();
 
     $.getScript('https://rawgit.com/christianbach/tablesorter/master/jquery.tablesorter.js', function() {
         $('#content > table').tablesorter( {sortList: [[1,0]]});
