@@ -11,6 +11,16 @@ function preg_match_all(regex, haystack) {
 }
 
 if (window.location.href.search(/key=/) != -1) {
+   
+   var button = $('<button style="margin-left:20px;" class="btn btn-danger">В архив</button>');
+   $('#content > form > button').after(button);
+   button.click(function(){
+      var url1 = $('#content > h4 > a').prop('href');
+      var key_id = window.location.href.replace(/^.*?key=/,'');
+      $.post(url1, { key_id : key_id } ,function(){
+         window.location.href = url1;
+      })
+   })
   
   var li = $('<li><a>Экспорт</a></li>');
   li.click(function(){
@@ -82,7 +92,7 @@ if (window.location.href.search(/id=/) != -1) {
     $('#content table td:nth-child(2) > form[action^="#main_"]').remove();
 
     $.getScript('https://rawgit.com/christianbach/tablesorter/master/jquery.tablesorter.js', function() {
-        $('#content > table').tablesorter( {sortList: [[1,0]]});
+        $('#content > table').tablesorter( {sortList: [[0,1]]});
     });
 
     $.getScript('http://code.jquery.com/ui/1.11.2/jquery-ui.js', function() {
