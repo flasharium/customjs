@@ -8,7 +8,9 @@ $(function () {
         var k = Math.round(n/30);
         var m = Math.round(k/7);
         $('#header > div.info > div > span > a').after($('<span>, доступно: <b>'+n+' руб.</b>, символов: <b>'+k+'k</b>, статей: <b>'+m+'</b></span>'))
-
+        
+        $('#header > div.info > div > span').before($('<br/>'));
+        
         var textarea = $('<div style="text-align:center;background:#fff;z-index: 1000;"><div><textarea cols="60" rows="20"></textarea></div><div><button>label</button></div></div>');
 
         textarea.hide();
