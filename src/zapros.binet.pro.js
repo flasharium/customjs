@@ -30,7 +30,7 @@ if (window.location.href.search(/key=/) != -1) {
   	obj['size'] = $('#content > table > tbody > tr:nth-child(2) > td:nth-child(2)').text();
   	obj['sizeMin'] = parseInt(obj['size']);
   	obj['sizeMax'] = parseInt(obj['size'].substr(obj['size'].indexOf('- ') + 2));
-  	obj['equal'] = $('#content > table > tbody > tr:nth-child(3) > td:nth-child(2)').text()
+  	obj['equal'] = $('#content > table > tbody > tr:nth-child(4) > td:nth-child(2)').text()
   	obj['parts'] = obj['equal'].split('Дополнительные слова, употребление которых необходимо:')
   	
   	obj['strong_equals'] = preg_match_all('([^\(]+\\(\\d+\\))', obj['parts'][0])
