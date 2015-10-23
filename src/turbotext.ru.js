@@ -45,7 +45,8 @@ $(function () {
 
                     commentForm.find('div.submit > div:nth-child(5) > div > input[type="text"]:nth-child(2)').val(obj['sizeMin']).css('border', '1px solid #f00');
                     commentForm.find('div.submit > div:nth-child(5) > div > input[type="text"]:nth-child(4)').val(obj['sizeMax']).css('border', '1px solid #f00');
-
+                    $("#label_8").val($("#label_8").find("option[text='" + obj['project'] + "']").val()).css('border', '1px solid #f00');
+                    
                     textarea.fadeOut()
                 })
 

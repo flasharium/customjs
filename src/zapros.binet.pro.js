@@ -1,3 +1,5 @@
+/*
+
 function preg_match_all(regex, haystack) {
    var globalRegex = new RegExp(regex, 'g');
    var globalMatch = haystack.match(globalRegex);
@@ -24,6 +26,7 @@ if (window.location.href.search(/key=/) != -1) {
   
   var li = $('<li><a>Экспорт</a></li>');
   li.click(function(){
+
   	var obj = {};
    
    obj['title'] = $('#content > table > tbody > tr:nth-child(1) > td:nth-child(2)').text();
@@ -80,8 +83,9 @@ if (window.location.href.search(/key=/) != -1) {
   	exp['sizeMin'] = Math.min(parseInt(obj['sizeMin']), 8000);
   	exp['sizeMax'] = Math.min(obj['sizeMax'], 10000);
   	exp['title'] = obj['title'];
+    $("#content > div.row-fluid.show-grid").append($("<div class='span6'><textarea id='taskExport' rows='20' cols='100'></textarea></div>"))
 
-  	$('#textarea').val(JSON.stringify(exp));
+  	$('#taskExport').val(JSON.stringify(exp));
   })
   $('#main_menu > ul').append(li)
 }
@@ -108,3 +112,21 @@ if (window.location.href.search(/id=/) != -1) {
     });
 }
 
+*/
+
+$("#content > table > tbody > tr:nth-child(7) > td:nth-child(2) > a").click(function(){
+
+  var id = window.location.href.match(/key=\d+/)[0].match(/\d+/)[0]
+
+  $.get("http://zapros.binet.pro/includes/export.php?key=" + id, function(data){
+      data = data.replace(/\r?\n|\r/g, "\\n")
+
+    $("#content > div.row-fluid.show-grid").append($("<div class='span6'><textarea id='taskExport' rows='20' cols='100'></textarea></div>"))
+
+    $('#taskExport').val(data);
+  })
+
+
+  return false
+
+})
