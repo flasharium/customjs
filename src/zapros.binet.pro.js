@@ -114,13 +114,14 @@ if (window.location.href.search(/id=/) != -1) {
 
 */
 
+
 $("#content > table > tbody > tr:nth-child(7) > td:nth-child(2) > a").click(function(){
 
   var id = window.location.href.match(/key=\d+/)[0].match(/\d+/)[0]
 
   $.get("http://zapros.binet.pro/includes/export.php?key=" + id, function(data){
       data = data.replace(/\r?\n|\r/g, "\\n")
-
+      
     $("#content > div.row-fluid.show-grid").append($("<div class='span6'><textarea id='taskExport' rows='20' cols='100'></textarea></div>"))
 
     $('#taskExport').val(data);
@@ -130,3 +131,27 @@ $("#content > table > tbody > tr:nth-child(7) > td:nth-child(2) > a").click(func
   return false
 
 })
+
+if (window.location.href.match('top=yes&key=').length == 1) {
+  
+    var textarea = $('<textarea id="hfrwfhkawhf724af2lawi79y3" style="position:fixed;right:0px;bottom:0px;height: 1px;width: 300px;"></textarea>')
+
+
+  $(document.body).append(textarea);
+
+  var limit = $('#content > table > tbody > tr:nth-child(2) > td:nth-child(1) br').length
+
+  $('#content > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').each(function(){
+    
+    limit --;
+    console.log(limit)
+    if (limit >= 0) {
+      textarea.val(textarea.val() + $(this).text().replace('www.', '').toLowerCase() + '\n')
+      textarea.height(0);
+        textarea.height(textarea.prop('scrollHeight'));
+    }
+
+  })
+
+
+}
